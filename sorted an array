@@ -1,0 +1,33 @@
+
+import java.util.Scanner;
+import java.util.Arrays;
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+         System.out.println("Enter an array size :");
+         int n=scan.nextInt();
+         scan.nextLine();
+          System.out.println("Enter an words in an string : ");
+         String words[]= new String[n];
+         for(int i=0;i<n;i++){
+             words[i]=scan.nextLine();
+         }
+         String sorted[] = bubble(words);
+         for(String word :sorted){
+             System.out.print(word+" ");
+      }
+    }
+    public static String[] bubble(String[] words){
+        for(int i=0;i<words.length-1;i++){
+            for(int j=0;j<words.length-i-1;j++){
+                if(words[j].compareTo(words[j+1])>0){
+                    String t= words[j];
+                    words[j]=words[j+1];
+                    words[j+1]=t;
+                }
+            }
+        }
+        return words;
+    }
+
+}
